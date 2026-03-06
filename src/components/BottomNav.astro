@@ -7,14 +7,14 @@ const { currentPath } = Astro.props;
 ---
 
 <nav class="bottom-nav">
-  <a href="/" class={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
+  <a href="/" class={`nav-item ${currentPath === '/AstroQuest' ? 'active' : ''}`}>
     <div class="icon-indicator">
       <span class="material-symbols-rounded icon">view_timeline</span>
     </div>
     <span class="label">Timeline</span>
   </a>
   
-  <a href="/map" class={`nav-item ${currentPath === '/map' ? 'active' : ''}`}>
+  <a href="/map" class={`nav-item ${currentPath === '/AstroQuest/map' ? 'active' : ''}`}>
     <div class="icon-indicator">
       <span class="material-symbols-rounded icon">map</span>
     </div>
