@@ -3,11 +3,11 @@ import AppLayout from '../layouts/AppLayout.astro';
 const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU"; 
 ---
 
-<AppLayout title="Event Map" currentPath="/map">
+<AppLayout title="Event Map" currentPath="/AstroQuest/map">
   <div class="map-wrapper">
     
-    <script is:inline async src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&loading=async&libraries=maps,marker&v=weekly"></script>
-
+    <script is:inline async src={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&loading=async&libraries=maps,marker&v=weekly`}></script>
+    
     <gmp-map 
       center="43.6451,-79.3847" 
       zoom="15" 
