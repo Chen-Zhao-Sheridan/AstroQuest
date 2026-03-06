@@ -1,0 +1,32 @@
+---
+const GOOGLE_API_KEY = "API_KEY"; 
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Interactive Map</title>
+    <meta name="viewport" content="width=device-width" />
+    
+    <!-- Import Google Maps Web Components -->
+    <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library"></script>
+    <script async src={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&callback=console.debug&libraries=maps,marker&v=beta`}></script>
+    
+    <style>
+      gmp-map {
+        height: 500px;
+        width: 100%;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body style="font-family: sans-serif; padding: 2rem;">
+    <h1>Interactive Map</h1>
+    <a href="/my-astro-site/">&lt;- Back to List</a>
+    <br /><br />
+
+    <gmp-map center="43.6532,-79.3832" zoom="12" map-id="DEMO_MAP_ID">
+      <gmp-advanced-marker position="43.6532,-79.3832" title="Toronto"></gmp-advanced-marker>
+    </gmp-map>
+    
+  </body>
+</html>

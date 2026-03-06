@@ -1,0 +1,20 @@
+---
+// src/pages/index.astro
+const items =["Astro", "GitHub Actions", "GitHub Pages", "Google Maps"];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Event Timeline</title>
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body style="font-family: sans-serif; padding: 2rem;">
+    <h1>Event Timeline</h1>
+    <ul>
+      {items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+    <a href="/AstroQuest/map">Go to the Map Page -></a>
+  </body>
+</html>
