@@ -1,0 +1,74 @@
+---
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<nav class="bottom-nav">
+  <a href="/" class={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
+    <div class="icon-indicator">
+      <span class="material-symbols-rounded icon">view_timeline</span>
+    </div>
+    <span class="label">Timeline</span>
+  </a>
+  
+  <a href="/map" class={`nav-item ${currentPath === '/map' ? 'active' : ''}`}>
+    <div class="icon-indicator">
+      <span class="material-symbols-rounded icon">map</span>
+    </div>
+    <span class="label">Map</span>
+  </a>
+</nav>
+
+<style>
+  .bottom-nav {
+    height: 80px;
+    background-color: var(--md-sys-color-surface-container);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .nav-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 64px;
+    cursor: pointer;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .icon-indicator {
+    width: 64px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    transition: background-color 0.2s ease;
+  }
+
+  .label {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* Active Tab States */
+  .nav-item.active {
+    color: var(--md-sys-color-on-surface);
+  }
+
+  .nav-item.active .icon-indicator {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+  }
+
+  .nav-item.active .icon {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
