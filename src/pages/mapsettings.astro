@@ -16,31 +16,39 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
             <div>
                 <p>Current Longitude: -79.699455</p>
             </div>
-            <div>
-                <form>
-                    <label for="overlay-select">Overlay</label>
-                    <select name="overlay-select" id="overlay-select">
-                        <option>&#60;select overlay&#62;</option>
-                        <option>Light Pollution</option>
-                        <option>Darkness</option>
-                    </select>
-                    <br />
-                </form>
+            <div class="dropdown">
+                Map Overlay:
+                <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                >
+                    &#60;select overlay&#62;
+                </button>
+                <ul class="dropdown-menu">
+                    <li>Light Pollution</li>
+                    <li>Darkness</li>
+                </ul>
             </div>
-            <div>
-                <form>
-                    <label for="time-select">Viewing Time:</label>
-                    <select name="time-select" id="time-select">
-                        <option>&#60;select time&#62;</option>
-                        <option>00:00</option>
-                        <option>00:30</option>
-                        <option>01:00</option>
-                        <option>...</option>
-                        <option>23:00</option>
-                        <option>23:30</option>
-                    </select>
-                    <br />
-                </form>
+            <div class="dropdown">
+                Time Select:
+                <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                >
+                    &#60;select time&#62;
+                </button>
+                <ul class="dropdown-menu">
+                    <li>00:00</li>
+                    <li>00:30</li>
+                    <li>01:00</li>
+                    <li>...</li>
+                    <li>23:00</li>
+                    <li>23:30</li>
+                </ul>
             </div>
             <div>
                 <p>Supposed to be a calendar here. Needs implementation.</p>
