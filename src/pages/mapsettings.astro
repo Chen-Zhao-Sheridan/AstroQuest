@@ -6,17 +6,17 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
 
 <AppLayout title="Event Map" currentPath="/AstroQuest/map">
     <div>
-        <div>
-            <div class="text-center card card-title">
-                <h3>Map Settings</h3>
-            </div>
-            <div class="card card-body">
-                <p>Current Latitude: 43.468116</p>
-            </div>
-            <div class="card card-body">
-                <p>Current Longitude: -79.699455</p>
-            </div>
-            <div class="dropdown card card-body">
+        <div class="text-center card card-title">
+            <h3>Map Settings</h3>
+        </div>
+        <div class="card card-body">
+            <p>Current Latitude: 43.468116</p>
+        </div>
+        <div class="card card-body">
+            <p>Current Longitude: -79.699455</p>
+        </div>
+        <div class="card card-body">
+            <div class="dropdown">
                 Map Overlay:
                 <button
                     class="btn btn-secondary dropdown-toggle"
@@ -27,11 +27,21 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
                     &#60;select overlay&#62;
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/AstroQuest/map">Light Pollution</a></li>
-                    <li><a class="dropdown-item" href="/AstroQuest/map">Darkness</a></li>
+                    <li>
+                        <a class="dropdown-item" href="/AstroQuest/map"
+                            >Light Pollution</a
+                        >
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/AstroQuest/map"
+                            >Darkness</a
+                        >
+                    </li>
                 </ul>
             </div>
-            <div class="dropdown card card-body">
+        </div>
+        <div class="card card-body">
+            <div class="dropdown">
                 Time Select:
                 <button
                     class="btn btn-secondary dropdown-toggle"
@@ -42,25 +52,51 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
                     &#60;select time&#62;
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/AstroQuest/map">00:00</a></li>
-                    <li><a class="dropdown-item" href="/AstroQuest/map">00:30</a></li>
-                    <li><a class="dropdown-item" href="/AstroQuest/map">01:00</a></li>
-                    <li><a class="dropdown-item" href="/AstroQuest/map">...</a></li>
-                    <li><a class="dropdown-item" href="/AstroQuest/map">23:00</a></li>
-                    <li><a class="dropdown-item" href="/AstroQuest/map">23:30</a></li>
+                    <li>
+                        <a class="dropdown-item" href="/AstroQuest/map">00:00</a
+                        >
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/AstroQuest/map">00:30</a
+                        >
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/AstroQuest/map">01:00</a
+                        >
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/AstroQuest/map">...</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/AstroQuest/map">23:00</a
+                        >
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/AstroQuest/map">23:30</a
+                        >
+                    </li>
                 </ul>
             </div>
-            <div class="card card-body">
-                <p>Supposed to be a calendar here. Needs implementation.</p>
-            </div>
-            <div></div>
-            <!-- spacer -->
-            <div class="card card-body">
-                <p>Selected Latitude: n/a</p>
-            </div>
-            <div class="card card-body">
-                <p>Selected Longitude: n/a</p>
-            </div>
+        </div>
+        <div class="card card-body">
+            <p>Supposed to be a calendar here. Needs implementation.</p>
+        </div>
+        <div></div>
+        <!-- spacer -->
+        <div class="card card-body">
+            <p>Selected Latitude: n/a</p>
+        </div>
+        <div class="card card-body">
+            <p>Selected Longitude: n/a</p>
+        </div>
+        <div class="card card-body">
+            <a
+                type="button"
+                class="btn btn-primary"
+                href="/AstroQuest/mapsettings"
+            >
+                Back to Map
+            </a>
         </div>
     </div>
 </AppLayout>
