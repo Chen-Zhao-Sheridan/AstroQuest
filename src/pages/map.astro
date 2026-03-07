@@ -1,34 +1,89 @@
 ---
-import AppLayout from '../layouts/AppLayout.astro';
-const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU"; 
+import AppLayout from "../layouts/AppLayout.astro";
+const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
 ---
 
 <AppLayout title="Event Map" currentPath="/AstroQuest/map">
   <div class="map-wrapper">
-    
-    <script is:inline async src={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&loading=async&libraries=maps,marker&v=weekly`}></script>
-    
-    <gmp-map 
-      center="43.6451,-79.3847" 
-      zoom="15" 
-      map-id="DEMO_MAP_ID" 
+    <script
+      is:inline
+      async
+      src={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&loading=async&libraries=maps,marker&v=weekly`}
+    ></script>
+
+    <gmp-map
+      center="43.6451,-79.3847"
+      zoom="15"
+      map-id="DEMO_MAP_ID"
       class="gmp-element"
     >
-      <gmp-advanced-marker 
-        position="43.6451,-79.3847" 
-        title="Metro Toronto Convention Centre">
+      <gmp-advanced-marker
+        position="43.6451,-79.3847"
+        title="Metro Toronto Convention Centre"
+      >
       </gmp-advanced-marker>
     </gmp-map>
-    
-    <div class="map-overlay-card">
-      <h3>Metro Toronto Convention Centre</h3>
-      <p>255 Front St W, Toronto, ON</p>
+
+    <div class="map-overlay-card row align-items-start">
+      <div class="col">
+        <h3>Metro Toronto Convention Centre</h3>
+        <p>255 Front St W, Toronto, ON</p>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#sidebar">
+          <i class="bi bi-list"></i>
+          <span>Sidebar</span>
+        </button>
+      </div>
     </div>
-    
+  </div>
+
+  <div class="collapse collapse-horizontal" id="sidebar">
+    <div class="">
+      <h3>Control Bar</h5>
+    </div>
+    <div class="">
+      <p>Current Latitude: 43.468116</p>
+    </div>
+    <div class="">
+      <p>Current Longitude: -79.699455</p>
+    </div>
+    <div class="">
+      <p>Overlay</p>
+      <select>
+        <option><span>&#60;select overlay&#62;</span></option>
+        <option><span>Light Pollution</span></option>
+        <option><span>Darkness</span></option>
+      </select>
+    </div>
+    <div class="">
+      <p>Viewing Time:</p>
+      <select>
+        <option>&#60;select time&#62;</option>
+        <option>00:00</option>
+        <option>00:30</option>
+        <option>01:00</option>
+        <option>...</option>
+        <option>23:00</option>
+        <option>23:30</option>
+      </select>
+    </div>
+    <div class="">
+      <p>Supposed to be a calendar here. Needs implementation.</p>
+    </div>
+    <div></div> <!-- spacer -->
+    <div>
+      <p>Selected Latitude: n/a</p>
+    </div>
+    <div class="">
+      <p>Selected Longitude: n/a</p>
+    </div>
   </div>
 </AppLayout>
 
 <style>
+
+  /* ai styles */
   .map-wrapper {
     position: relative;
     width: 100%;
@@ -52,9 +107,9 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
     background-color: var(--md-sys-color-surface-container-high);
     border-radius: 16px;
     padding: 16px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* Ensure the card floats above the Google Map controls */
-    z-index: 1; 
+    z-index: 1;
   }
 
   .map-overlay-card h3 {
