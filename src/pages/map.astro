@@ -30,8 +30,9 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
         <p>255 Front St W, Toronto, ON</p>
       </div>
       <div class="col">
-        <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#sidebar">
-          <i class="bi bi-list"></i>
+        <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#sidebar"
+        aria-expanded="false" aria-controls="sidebar">
+          <!-- <i class="bi bi-list"></i> -->
           <span>Sidebar</span>
         </button>
       </div>
@@ -39,6 +40,7 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
   </div>
 
   <div class="collapse collapse-horizontal" id="sidebar">
+    <div class="card">
     <div class="">
       <h3>Control Bar</h5>
     </div>
@@ -50,15 +52,15 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
     </div>
     <div class="">
       <p>Overlay</p>
-      <select>
+      <!-- <select>
         <option><span>&#60;select overlay&#62;</span></option>
         <option><span>Light Pollution</span></option>
         <option><span>Darkness</span></option>
-      </select>
+      </select> -->
     </div>
     <div class="">
       <p>Viewing Time:</p>
-      <select>
+      <!-- <select>
         <option>&#60;select time&#62;</option>
         <option>00:00</option>
         <option>00:30</option>
@@ -66,7 +68,7 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
         <option>...</option>
         <option>23:00</option>
         <option>23:30</option>
-      </select>
+      </select> -->
     </div>
     <div class="">
       <p>Supposed to be a calendar here. Needs implementation.</p>
@@ -77,6 +79,7 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
     </div>
     <div class="">
       <p>Selected Longitude: n/a</p>
+    </div>
     </div>
   </div>
 </AppLayout>
