@@ -1,0 +1,28 @@
+---
+interface Props {
+    time: string;
+    title: string;
+    description: string;
+}
+
+const { time, title, description } = Astro.props;
+---
+
+<details class="card">
+
+    <summary class="card-header" style="cursor: pointer;">
+        <span class="text-primary">{time}</span>
+        {title}
+    </summary>
+
+    <div class="card-body bg-light">
+        <p class="card-text small">
+            {description}
+        </p>
+
+        <a href="/AstroQuest/map" class="btn btn-primary btn-sm">
+            View Map
+        </a>
+    </div>
+
+</details>

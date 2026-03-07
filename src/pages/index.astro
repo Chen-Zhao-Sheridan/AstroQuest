@@ -1,6 +1,44 @@
 ---
 import AppLayout from '../layouts/AppLayout.astro';
+import TimelineItem from '../components/TimelineItem.astro';
+
+// Hardcoded demo events
+const demoEvents =[
+    {
+        time: "10:00 PM UTC",
+        title: "Asteroid 3568",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+    },
+    {
+        time: "11:45 PM UTC",
+        title: "Solar Flare",
+        description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+    },
+    {
+        time: "02:30 AM UTC",
+        title: "Full Moon",
+        description: "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna."
+    },
+    {
+        time: "05:15 AM UTC",
+        title: "Star Shower",
+        description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget."
+    }
+];
 ---
-<AppLayout title="Event Timeline" currentPath="/AstroQuest">
+
+<AppLayout title="Celestial Timeline" currentPath="/AstroQuest">
+
+    <div class="py-3 ps-2 pe-1">
+        <div class="accordion" id="timelineAccordion">
+            {demoEvents.map((event, index) => (
+                <TimelineItem
+                    time={event.time}
+                    title={event.title}
+                    description={event.description}
+                />
+            ))}
+        </div>
+    </div>
 
 </AppLayout>
