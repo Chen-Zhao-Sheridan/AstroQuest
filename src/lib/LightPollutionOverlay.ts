@@ -60,6 +60,7 @@ export function createLightPollutionOverlay(
       this.div = document.createElement("div");
       this.div.style.position = "absolute";
       this.div.style.pointerEvents = "none";
+      this.div.style.display = "none";
       this.getPanes()!.overlayLayer.appendChild(this.div);
     }
 
