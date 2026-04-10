@@ -16,12 +16,15 @@ window.lightPollutionOverlay = lpoverlay;
 // Controls
 var mapSettingsReveal = document.getElementById("map-settings-reveal");
 var mapSettingsHide = document.getElementById("map-settings-hide");
+var mapMain = document.getElementById("map-main")
 var mapSettings = document.getElementById("map-settings");
 mapSettingsReveal.addEventListener("click", () =>{
     mapSettings.hidden = false
+    mapMain.hidden = true
 });
 mapSettingsHide.addEventListener("click", () => {
     mapSettings.hidden = true
+    mapMain.hidden = false
 });
 
 var overlayDropdown = document.getElementById("overlay-select");
