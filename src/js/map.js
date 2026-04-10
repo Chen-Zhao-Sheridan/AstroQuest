@@ -14,18 +14,17 @@ lpoverlay.setMap(map);
 window.lightPollutionOverlay = lpoverlay;
 
 // Controls
-mapSettingsReveal = document.getElementById("map-settings-reveal")
-mapSettingsHide = document.getElementById("map-settings-hide")
-mapSettings = document.getElementById("map-settings")
+var mapSettingsReveal = document.getElementById("map-settings-reveal");
+var mapSettingsHide = document.getElementById("map-settings-hide");
+var mapSettings = document.getElementById("map-settings");
 mapSettingsReveal.addEventListener("click", () =>{
     mapSettings.hidden = false
-})
+});
 mapSettingsHide.addEventListener("click", () => {
     mapSettings.hidden = true
-})
+});
 
-overlayDropdown = document
-    .getElementById("overlay-select")
+var overlayDropdown = document.getElementById("overlay-select");
 overlayDropdown.addEventListener("change", () => {
     overlayDropdown.value === 'light-pollution-overlay' ? lpoverlay.show() : lpoverlay.hide()
 });
