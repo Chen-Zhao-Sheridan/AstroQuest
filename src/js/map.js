@@ -16,19 +16,21 @@ window.lightPollutionOverlay = lpoverlay;
 // Controls
 var mapSettingsReveal = document.getElementById("map-settings-reveal");
 var mapSettingsHide = document.getElementById("map-settings-hide");
-var mapMain = document.getElementById("map-main")
+var mapMain = document.getElementById("map-main");
 var mapSettings = document.getElementById("map-settings");
 mapSettingsReveal.addEventListener("click", () =>{
-    mapSettings.hidden = false
-    mapMain.hidden = true
+    mapSettings.hidden = false;
+    mapMain.hidden = true;
 });
 mapSettingsHide.addEventListener("click", () => {
-    mapSettings.hidden = true
-    mapMain.hidden = false
+    mapSettings.hidden = true;
+    mapMain.hidden = false;
 });
 
-var overlayDropdown = document.getElementById("overlay-select");
-overlayDropdown.addEventListener("change", () => {
-    overlayDropdown.value === 'light-pollution-overlay' ? lpoverlay.show() : lpoverlay.hide()
+var lpOverlayToggle = document.getElementById("lp-overlay-toggle");
+let visible = false;
+lpoverlay.hide()
+lpOverlayToggle.addEventListener("click", () => {
+  visible = !visible;
+  visible ? overlay.show() : overlay.hide();
 });
-
