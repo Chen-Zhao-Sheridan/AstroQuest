@@ -9,17 +9,20 @@ const map = mapEl.innerMap;
 
 const lpoverlay = createLightPollutionOverlay(0.6);
 lpoverlay.setMap(map);
-lpoverlay.hide();
 
 // Expose globally so other scripts/islands can control it
 window.lightPollutionOverlay = lpoverlay;
 
 // Controls
+document.addEventListener("DOMContentLoaded", function () {
+    lpoverlay.hide()
+});
+
 var mapSettingsReveal = document.getElementById("map-settings-reveal");
 var mapSettingsHide = document.getElementById("map-settings-hide");
 var mapMain = document.getElementById("map-main");
 var mapSettings = document.getElementById("map-settings");
-mapSettingsReveal.addEventListener("click", () =>{
+mapSettingsReveal.addEventListener("click", () => {
     mapSettings.hidden = false;
     mapMain.hidden = true;
 });
@@ -31,6 +34,6 @@ mapSettingsHide.addEventListener("click", () => {
 var lpOverlayToggle = document.getElementById("lp-overlay-toggle");
 let visible = true;
 lpOverlayToggle.addEventListener("click", () => {
-  visible = !visible;
-  visible ? lpoverlay.show() : lpoverlay.hide();
+    visible = !visible;
+    visible ? lpoverlay.show() : lpoverlay.hide();
 });
