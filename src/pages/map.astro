@@ -18,11 +18,11 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
       map-id="map"
       class="gmp-element"
     >
-      <gmp-advanced-marker
+      <!-- <gmp-advanced-marker
         position="43.6451,-79.3847"
         title="Metro Toronto Convention Centre"
       >
-      </gmp-advanced-marker>
+      </gmp-advanced-marker> -->
     </gmp-map>
 
     <div class="map-overlay-card row align-items-start">
@@ -36,9 +36,12 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
           class="btn btn-primary"
           href="/AstroQuest/mapsettings"
         >
-          <!-- <i class="bi bi-list"></i> -->
           <span>Map Settings</span>
       </a>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider">Toogle Overlay</span>
+      </label>
       </div>
       
     </div>
@@ -64,7 +67,7 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
 
       const overlay = new LightPollutionOverlay(
         bounds,
-        "/tiles/light-pollution.png", // your tile or image URL
+        "https://www.lightpollutionmap.info/", // your tile or image URL
         0.6
       );
 
