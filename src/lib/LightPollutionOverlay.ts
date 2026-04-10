@@ -114,7 +114,11 @@ export function createLightPollutionOverlay(
       this.year = year;
       this.draw(); // redraw with new layer
     }
-  }
 
+    // setLayer(layerName: string) {
+    //   this.layer = layerName;
+    //   this.draw(); // triggers a fresh WMS request
+    // }
+  }
   return new LightPollutionOverlay(opacity, year);
 }
