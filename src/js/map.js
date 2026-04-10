@@ -9,6 +9,7 @@ const map = mapEl.innerMap;
 
 const lpoverlay = createLightPollutionOverlay(0.6);
 lpoverlay.setMap(map);
+lpoverlay.hide();
 
 // Expose globally so other scripts/islands can control it
 window.lightPollutionOverlay = lpoverlay;
