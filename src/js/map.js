@@ -28,9 +28,8 @@ mapSettingsHide.addEventListener("click", () => {
 });
 
 var lpOverlayToggle = document.getElementById("lp-overlay-toggle");
-let visible = false;
-lpoverlay.hide()
+let visible = true;
 lpOverlayToggle.addEventListener("click", () => {
   visible = !visible;
-  visible ? overlay.show() : overlay.hide();
+  visible ? lpoverlay.show() : lpoverlay.hide();
 });
