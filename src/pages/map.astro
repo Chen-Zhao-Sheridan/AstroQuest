@@ -1,6 +1,5 @@
 ---
 import AppLayout from "../layouts/AppLayout.astro";
-import { createLightPollutionOverlay } from "../lib/LightPollutionOverlay.ts";
 // import "bootstrap/dist/css/bootstrap.css";
 const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
 ---
@@ -41,6 +40,7 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
     </div>
   </div>
   <script type="module">
+    import { createLightPollutionOverlay } from "src/lib/LightPollutionOverlay.ts";
     // Wait for the <gmp-map> custom element to be fully upgraded
     await customElements.whenDefined("gmp-map");
 
