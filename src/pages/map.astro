@@ -9,7 +9,7 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
     <script
       is:inline
       async
-      src={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&loading=async&libraries=maps,marker&v=weekly`}
+      src={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&loading=async&libraries=maps,marker&v=beta`}
     ></script>
 
     <gmp-map
@@ -18,11 +18,11 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
       map-id="map"
       class="gmp-element"
     >
-      <!-- <gmp-advanced-marker
+      <gmp-advanced-marker
         position="43.6451,-79.3847"
         title="Metro Toronto Convention Centre"
       >
-      </gmp-advanced-marker> -->
+      </gmp-advanced-marker>
     </gmp-map>
 
     <div class="map-overlay-card row align-items-start">
