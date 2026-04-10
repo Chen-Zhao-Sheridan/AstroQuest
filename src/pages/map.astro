@@ -1,6 +1,5 @@
 ---
 import AppLayout from "../layouts/AppLayout.astro";
-import { createLightPollutionOverlay } from "../lib/LightPollutionOverlay.ts";
 // import "bootstrap/dist/css/bootstrap.css";
 const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
 ---
@@ -40,27 +39,30 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
       <label>Overlay</label>
     </div>
   </div>
+  <script type="module">
+    import { createLightPollutionOverlay } from "../lib/LightPollutionOverlay.ts";
+    // Wait for the <gmp-map> custom element to be fully upgraded
+    await customElements.whenDefined("gmp-map");
+
+    const mapEl = document.querySelector("gmp-map");
+
+    // Method A: grab innerMap directly
+    const map = mapEl.innerMap;
+
+    const overlay = createLightPollutionOverlay(0.6);
+    overlay.setMap(map);
+
+    // Expose globally so other scripts/islands can control it
+    window.lightPollutionOverlay = overlay;
+
+    // Controls
+    document
+      .getElementById("toggle-overlay")
+      .addEventListener("change", (e) => {
+        e.target.checked ? overlay.show() : overlay.hide();
+      });
+  </script>
 </AppLayout>
-<script type="module">
-  // Wait for the <gmp-map> custom element to be fully upgraded
-  await customElements.whenDefined("gmp-map");
-
-  const mapEl = document.querySelector("gmp-map");
-
-  // Method A: grab innerMap directly
-  const map = mapEl.innerMap;
-
-  const overlay = createLightPollutionOverlay(0.6);
-  overlay.setMap(map);
-
-  // Expose globally so other scripts/islands can control it
-  window.lightPollutionOverlay = overlay;
-
-  // Controls
-  document.getElementById("toggle-overlay").addEventListener("change", (e) => {
-    e.target.checked ? overlay.show() : overlay.hide();
-  });
-</script>
 
 <style>
   /* ai styles */
