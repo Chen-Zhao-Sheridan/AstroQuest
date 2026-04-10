@@ -31,15 +31,94 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
         <p>255 Front St W, Toronto, ON</p>
       </div>
       <div class="col">
-        <a type="button" class="btn btn-primary" href="/AstroQuest/mapsettings">
-          <span>Map Settings</span>
-        </a>
-        <input type="checkbox" id="toggle-overlay" />
+        <span>
+          <button class="btn btn-primary" id="map-settings-reveal">Map Settings</button>
+        </span>
+        <div>
+          <input type="checkbox" id="toggle-overlay" />
+          <label>Overlay</label>
+        </div>
       </div>
-      <label>Overlay</label>
     </div>
   </div>
-  <script src="../js/lightpollutionoverlay.js"></script>
+  <div hidden="true" id="map-settings">
+    <div class="text-center card card-title">
+      <h3>Map Settings</h3>
+    </div>
+    <div class="card card-body">
+      <p>Current Latitude: 43.468116</p>
+    </div>
+    <div class="card card-body">
+      <p>Current Longitude: -79.699455</p>
+    </div>
+    <div class="card card-body">
+      <div class="dropdown">
+        Map Overlay:
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          &lt;select overlay&gt;
+        </button>
+        <ul class="dropdown-menu">
+          <li value="light-pollution-overlay">Light Pollution</li>
+          <li value="darkness-overlay">Darkness</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card card-body">
+      <div class="dropdown">
+        Time Select:
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          &lt;select time&gt;
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            00:00
+          </li>
+          <li>
+            00:30
+          </li>
+          <li>
+            01:00
+          </li>
+          <li>
+            ...
+          </li>
+          <li>
+            23:00
+          </li>
+          <li>
+            23:30
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card card-body">
+      <p>Supposed to be a calendar here. Needs implementation.</p>
+    </div>
+    <div></div>
+    <!-- spacer -->
+    <div class="card card-body">
+      <p>Selected Latitude: n/a</p>
+    </div>
+    <div class="card card-body">
+      <p>Selected Longitude: n/a</p>
+    </div>
+    <div class="card card-body">
+      <a type="button" class="btn btn-primary" href="/AstroQuest/map">
+        Back to Map
+      </a>
+    </div>
+  </div>
+  <script src="../js/map.js"></script>
 </AppLayout>
 
 <style>
