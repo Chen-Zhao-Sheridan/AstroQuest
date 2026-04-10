@@ -31,63 +31,50 @@ const GOOGLE_API_KEY = "AIzaSyDhluJzFsg9dPELcj6dP-LqXa6iRHYhtwU";
         <p>255 Front St W, Toronto, ON</p>
       </div>
       <div class="col">
-        <a
-          type="button"
-          class="btn btn-primary"
-          href="/AstroQuest/mapsettings"
-        >
+        <a type="button" class="btn btn-primary" href="/AstroQuest/mapsettings">
           <span>Map Settings</span>
-      </a>
-      <label class="switch" id="toggle-overlay">
-        <input type="checkbox">
-        <span class="slider">Toogle Overlay</span>
-      </label>
+        </a>
+        <label class="switch" id="toggle-overlay">
+          <input type="checkbox" />
+          <span class="slider">Toogle Overlay</span>
+        </label>
       </div>
-      
     </div>
-
-    
   </div>
   <script type="module">
-      import { LightPollutionOverlay } from "../lib/LightPollutionOverlay.ts";
+    import { LightPollutionOverlay } from "../lib/LightPollutionOverlay.ts";
 
-      // Wait for the <gmp-map> custom element to be fully upgraded
-      await customElements.whenDefined("gmp-map");
+    // Wait for the <gmp-map> custom element to be fully upgraded
+    await customElements.whenDefined("gmp-map");
 
-      const mapEl = document.querySelector("gmp-map");
+    const mapEl = document.querySelector("gmp-map");
 
-      // Method A: grab innerMap directly
-      const map = mapEl.innerMap;
+    // Method A: grab innerMap directly
+    const map = mapEl.innerMap;
 
-      // World-bounds light pollution image overlay
-      const bounds = new google.maps.LatLngBounds(
-        { lat: -85, lng: -180 },
-        { lat: 85,  lng: 180  }
-      );
+    // World-bounds light pollution image overlay
+    const bounds = new google.maps.LatLngBounds(
+      { lat: -85, lng: -180 },
+      { lat: 85, lng: 180 },
+    );
 
-      const overlay = new LightPollutionOverlay(
-        bounds,
-        "https://www.lightpollutionmap.info/", // your tile or image URL
-        0.6
-      );
+    const overlay = createLightPollutionOverlay(0.6);
+    overlay.setMap(map);
 
-      // Programmatically attach — no click needed
-      overlay.setMap(map);
+    // Expose globally so other scripts/islands can control it
+    window.lightPollutionOverlay = overlay;
 
-      // Expose globally so other scripts/islands can control it
-      window.lightPollutionOverlay = overlay;
+    // Controls
+    document
+      .getElementById("toggle-overlay")
+      .addEventListener("change", (e) => {
+        e.target.checked ? overlay.show() : overlay.hide();
+      });
 
-      // Controls
-      document.getElementById("toggle-overlay")
-        .addEventListener("change", (e) => {
-          e.target.checked ? overlay.show() : overlay.hide();
-        });
-
-      document.getElementById("opacity-slider")
-        .addEventListener("input", (e) => {
-          overlay.setOpacity(Number(e.target.value));
-        });
-    </script>
+    document.getElementById("opacity-slider").addEventListener("input", (e) => {
+      overlay.setOpacity(Number(e.target.value));
+    });
+  </script>
 </AppLayout>
 
 <style>
