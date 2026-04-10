@@ -12,5 +12,8 @@
     "@googlemaps/js-api-loader": "^2.0.2",
     "astro": "^5.17.1",
     "astro-bootstrap": "^0.7.2"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.58.1"
   }
 }
